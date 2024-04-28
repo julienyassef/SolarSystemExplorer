@@ -19,9 +19,6 @@ export class SystemMapComponent implements OnInit {
   constructor(private solarSystemService: SolarSystemService) { }
 
   ngOnInit() {
-    this.solarSystemService.getBodies().subscribe(data => {
-      this.bodies = data.bodies;
-      console.log(this.bodies);
-    });
+    
   }
 }

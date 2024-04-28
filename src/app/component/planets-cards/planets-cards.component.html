@@ -1,0 +1,24 @@
+<div class="card-container">
+  <ng-container *ngIf="bodies$ | async as bodies">
+      <div *ngFor="let body of bodies" class="card">
+          <img [src]="body.imageUrl" alt="Image of {{ body.name }}">
+          <div class="card-content">
+              <h3>{{ body.name }}</h3>
+              <p *ngIf="body.moons && body.moons.length > 0">Moons: {{ body.moons.length }}</p>
+              <p *ngIf="body.mass">Mass: {{ body.mass.massValue }}e{{ body.mass.massExponent }} kg</p>
+              <p *ngIf="body.vol">Volume: {{ body.vol.volValue }}e{{ body.vol.volExponent }} km³</p>
+              <p *ngIf="body.gravity">Gravity: {{ body.gravity }} m/s²</p>
+              <p *ngIf="body.radius">Mean Radius: {{ body.radius.meanRadius }} km</p>
+              <p *ngIf="body.radius">Equatorial Radius: {{ body.radius.equaRadius }} km</p>
+              <p *ngIf="body.radius">Polar Radius: {{ body.radius.polarRadius }} km</p>
+              <p *ngIf="body.eccentricity">Eccentricity: {{ body.eccentricity }}</p>
+              <p *ngIf="body.inclination">Inclination: {{ body.inclination }}°</p>
+              <p *ngIf="body.discoveredBy">Discovered By: {{ body.discoveredBy }}</p>
+              <p *ngIf="body.discoveryDate">Discovery Date: {{ body.discoveryDate }}</p>
+              <p *ngIf="body.alternativeName">Alternative Name: {{ body.alternativeName }}</p>
+              <p *ngIf="body.axialTilt">Axial Tilt: {{ body.axialTilt }}°</p>
+              <p *ngIf="body.avgTemp">Average Temperature: {{ body.avgTemp }} K</p>
+          </div>
+      </div>
+  </ng-container>
+</div>

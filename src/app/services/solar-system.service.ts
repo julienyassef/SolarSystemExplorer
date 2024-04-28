@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { CelestialBody } from '../models/planet.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +14,12 @@ export class SolarSystemService {
   constructor(private http: HttpClient) { }
 
   // Méthode pour obtenir tous les corps du système solaire
-  getBodies(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/bodies/`);
+ 
+
+  getBodies(): Observable<CelestialBody[]> {
+    return this.http.get<{bodies: any[]}>(`${this.baseUrl}/bodies/`).pipe(
+      map(response => response.bodies.map(body => new CelestialBody(body)))
+    );
   }
 
   // Méthode pour obtenir les détails d'un corps spécifique par ID
