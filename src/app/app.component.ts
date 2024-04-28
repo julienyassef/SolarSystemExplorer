@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SystemMapComponent } from './systeme-map/systeme-map.component';
+import { SystemMapComponent } from './component/systeme-map/systeme-map.component';
 
 @Component({
   selector: 'app-root',
