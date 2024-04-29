@@ -1,12 +1,8 @@
 <h2>Listes des planètes</h2>
 <ul>
-    <ng-container *ngFor="let planet of planets$ | async">
-      <li *ngIf="planet.isPlanet">
-        <h3>{{ planet.name }}</h3>
-        <p>Gravité: {{ planet.gravity }} m/s²</p>
-        <p>Température moyenne: {{ planet.avgTemp }} K</p>
-        <p>Découvert par: {{ planet.discoveredBy }}, en {{ planet.discoveryDate }}</p>
-      </li>
-    </ng-container>
-  </ul>
-  
+  <ng-container *ngFor="let planet of planets$ | async">
+    <li *ngIf="planet.isPlanet">
+      <app-planet-card [planet]="planet"></app-planet-card>
+    </li>
+  </ng-container>
+</ul>
