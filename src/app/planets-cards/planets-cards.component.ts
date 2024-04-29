@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CelestialBody } from '../../models/planet.model';
-import { SolarSystemService } from '../../services/solar-system.service';
+import { CelestialBody } from '../models/planet.model';
+import { SolarSystemService } from '../services/solar-system.service';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 
 @Component({

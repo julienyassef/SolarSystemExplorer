@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SystemMapComponent } from './component/systeme-map/systeme-map.component';
-import { PlanetsCardsComponent } from './component/planets-cards/planets-cards.component';
+import { HeaderComponent } from './header/header.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PlanetsCardsComponent],
+  imports: [RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

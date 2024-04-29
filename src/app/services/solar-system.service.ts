@@ -14,8 +14,6 @@ export class SolarSystemService {
   constructor(private http: HttpClient) { }
 
   // Méthode pour obtenir tous les corps du système solaire
- 
-
   getBodies(): Observable<CelestialBody[]> {
     return this.http.get<{bodies: any[]}>(`${this.baseUrl}/bodies/`).pipe(
       map(response => response.bodies.map(body => new CelestialBody(body)))

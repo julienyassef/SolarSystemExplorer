@@ -38,12 +38,12 @@ export class CelestialBody {
       this.vol = data.vol;
       this.gravity = data.gravity;
       this.radius = data.radius;
-      this.eccentricity = data.eccentricity; // Initialisation de la propriété eccentricity
-      this.inclination = data.inclination; // Initialisation de la propriété inclination
-      this.discoveredBy = data.discoveredBy; // Initialisation de la propriété discoveredBy
-      this.discoveryDate = data.discoveryDate; // Initialisation de la propriété discoveryDate
-      this.alternativeName = data.alternativeName; // Initialisation de la propriété alternativeName
-      this.axialTilt = data.axialTilt; // Initialisation de la propriété axialTilt
-      this.avgTemp = data.avgTemp; // Initialisation de la propriété avgTemp
+      this.eccentricity = data.eccentricity; 
+      this.inclination = data.inclination; 
+      this.discoveredBy = data.discoveredBy; 
+      this.discoveryDate = data.discoveryDate; 
+      this.alternativeName = data.alternativeName; 
+      this.axialTilt = data.axialTilt; 
+      this.avgTemp = data.avgTemp; 
   }
 }
