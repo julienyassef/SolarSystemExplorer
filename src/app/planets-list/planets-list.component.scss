@@ -1,0 +1,28 @@
+.planet-list__title {
+  text-align: center;
+  font-size: 2rem;
+  color: #DA1274;
+  margin-bottom: 20px;
+}
+
+.planet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 3rem; 
+}
+
+.planet-list__item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.planet-card {
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

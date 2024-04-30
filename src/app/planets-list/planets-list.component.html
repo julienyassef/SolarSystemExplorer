@@ -1,8 +1,8 @@
-<h2>Listes des planètes</h2>
-<ul>
+<h2 class="planet-list__title">Listes des planètes</h2>
+<ul class="planet-list">
   <ng-container *ngFor="let planet of planets$ | async">
-    <li *ngIf="planet.isPlanet">
-      <app-planet-card [planet]="planet"></app-planet-card>
+    <li class="planet-list__item" *ngIf="planet.isPlanet">
+      <app-planet-card [planet]="planet" class="planet-card"></app-planet-card>
     </li>
   </ng-container>
 </ul>

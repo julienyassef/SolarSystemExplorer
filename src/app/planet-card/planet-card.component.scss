@@ -16,8 +16,6 @@
     &:hover {
      background-color: rgba(6, 46, 88, 1); 
      color:white;
-   
-      
     }
   
     &__title {
@@ -26,9 +24,15 @@
       color: #DA1274;
     }
   
+    &__image {
+      width: 150px;
+      height: 150px;
+    }
+    
     &__detail {
       font-size: 1rem;
       text-align: center;
     }
+
   }
   
