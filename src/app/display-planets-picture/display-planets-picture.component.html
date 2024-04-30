@@ -1,0 +1,6 @@
+<div class="planets-container">
+    <div *ngFor="let planet of planets" class="planet">
+      <img [src]="planet.image" alt="{{ planet.name }}">
+      <div class="planet-info">{{ planet.name }}</div>
+    </div>
+  </div>
