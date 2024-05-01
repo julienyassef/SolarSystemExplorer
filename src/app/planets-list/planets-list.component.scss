@@ -1,10 +1,19 @@
 .planet-list-page {
-  background-image: url('../../assets/cover/starryStar.jpg');
+  // background-image: url('../../assets/cover/starryStar.jpg');
   margin: 0;
   padding: 0;
   background-size: cover; 
   background-position: center; 
 
+}
+
+.animation-night-star {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  z-index: -1;
 }
 
 .planet-list__title {

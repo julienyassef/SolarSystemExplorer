@@ -6,11 +6,12 @@ import { SolarSystemService } from '../services/solar-system.service';
 import { CelestialBody } from '../models/planet.model';
 import { PlanetCardComponent } from '../planet-card/planet-card.component';
 import { LoaderComponent } from '../loader/loader.component';
+import { NightStarAnimationComponent } from '../night-star-animation/night-star-animation.component';
 
 @Component({
   selector: 'app-planets-list',
   standalone: true,
-  imports: [NgFor, CommonModule, PlanetCardComponent, LoaderComponent],
+  imports: [NgFor, CommonModule, PlanetCardComponent, LoaderComponent, NightStarAnimationComponent],
   templateUrl: './planets-list.component.html',
   styleUrl: './planets-list.component.scss'
 })

@@ -1,5 +1,6 @@
 <header class="solar-system-header">
-    <app-night-star-animation class="animation-night-star"></app-night-star-animation>
+    <!-- Affiche l'animation de nuit uniquement si showNightAnimation est vrai -->
+    <app-night-star-animation *ngIf="showNightAnimation" class="animation-night-star"></app-night-star-animation>
     <h1 class="header-title">Explorateur du Système Soleil</h1>
     <nav class="navigation">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Home</a>
