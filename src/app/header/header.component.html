@@ -1,4 +1,4 @@
-<header class="solar-system-header">
+<header class="solar-system-header" [class]="headerClass"  [class.scrolled-shadow]="hasScrolled">
     <!-- Affiche l'animation de nuit uniquement si showNightAnimation est vrai -->
     <app-night-star-animation *ngIf="showNightAnimation" class="animation-night-star"></app-night-star-animation>
     <h1 class="header-title">Explorateur du Système Soleil</h1>
