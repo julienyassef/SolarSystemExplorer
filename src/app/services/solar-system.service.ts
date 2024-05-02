@@ -20,13 +20,12 @@ export class SolarSystemService {
     );
   }
 
-  // Méthode pour obtenir les détails d'un corps spécifique par ID
-  getBodyById(id: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/bodies/${id}`);
+   // Méthode pour obtenir uniquement les planètes
+   getPlanets(): Observable<CelestialBody[]> {
+    return this.getBodies().pipe(
+      map(bodies => bodies.filter(body => body.isPlanet))
+    );
   }
 
-  // Méthode pour obtenir le nombre d'objets connus dans le système solaire
-  getKnownCount(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/knowncount/`);
-  }
+
 }

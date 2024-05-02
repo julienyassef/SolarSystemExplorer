@@ -3,6 +3,7 @@ export class CelestialBody {
   name!: string;
   englishName!: string;
   isPlanet!: boolean;
+  semimajorAxis: number;
   moons!: Array<{ moon: string, rel: string }>;
   imageUrl!: string; 
   mass?: {
@@ -32,6 +33,7 @@ export class CelestialBody {
       this.name = data.name;
       this.englishName = data.englishName;
       this.isPlanet = data.isPlanet;
+      this.semimajorAxis = data.semimajorAxis;
       this.moons = data.moons;
       this.imageUrl = data.imageUrl;
       this.mass = data.mass;
