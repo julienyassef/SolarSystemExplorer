@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 //Import Serice
-import { SolarSystemService } from '../services/solar-system.service';
+import { SolarSystemService } from '../../services/solar-system.service';
 import { CommonModule, NgFor } from '@angular/common';
 
 @Component({

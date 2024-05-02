@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CelestialBody } from '../models/planet.model';
+import { CelestialBody } from '../../models/planet.model';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 
 @Component({

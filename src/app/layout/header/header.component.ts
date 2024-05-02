@@ -1,7 +1,7 @@
 import { Component,  HostListener  } from '@angular/core';
 import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NightStarAnimationComponent } from '../night-star-animation/night-star-animation.component';
+import { NightStarAnimationComponent } from '../../components/night-star-animation/night-star-animation.component';
 import { NgIf } from '@angular/common';
 
 @Component({

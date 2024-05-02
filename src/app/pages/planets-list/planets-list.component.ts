@@ -2,11 +2,11 @@ import { CommonModule, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
-import { SolarSystemService } from '../services/solar-system.service';
-import { CelestialBody } from '../models/planet.model';
-import { PlanetCardComponent } from '../planet-card/planet-card.component';
-import { LoaderComponent } from '../loader/loader.component';
-import { NightStarAnimationComponent } from '../night-star-animation/night-star-animation.component';
+import { SolarSystemService } from '../../services/solar-system.service';
+import { CelestialBody } from '../../models/planet.model';
+import { PlanetCardComponent } from '../../components/planet-card/planet-card.component';
+import { LoaderComponent } from '../../components/loader/loader.component';
+import { NightStarAnimationComponent } from '../../components/night-star-animation/night-star-animation.component';
 
 @Component({
   selector: 'app-planets-list',
