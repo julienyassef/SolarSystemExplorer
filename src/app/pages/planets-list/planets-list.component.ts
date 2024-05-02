@@ -24,7 +24,7 @@ export class PlanetsListComponent implements OnInit  {
 
   ngOnInit() {
     // Utiliser `finalize` pour changer l'état de `loading` une fois les données chargées
-    this.planets$ = this.solarSystemService.getBodies().pipe(
+    this.planets$ = this.solarSystemService.getPlanets().pipe(
       finalize(() => this.loading = false)
     );
   }
