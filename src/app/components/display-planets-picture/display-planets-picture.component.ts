@@ -11,14 +11,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class PlanetsComponent implements OnInit {
   planets = [
-    { name: "Mercure", image: "assets/picturePlanet/mercury.jpg" },
-    { name: "Vénus", image: "assets/picturePlanet/venus.jpg" },
-    { name: "Terre", image: "assets/picturePlanet/earth.jpg" },
-    { name: "Mars", image: "assets/picturePlanet/mars.jpg" },
-    { name: "Jupiter", image: "assets/picturePlanet/jupiter.jpg" },
-    { name: "Saturne", image: "assets/picturePlanet/saturn.jpg" },
-    { name: "Uranus", image: "assets/picturePlanet/uranus.jpg" },
-    { name: "Neptune", image: "assets/picturePlanet/neptune.jpg" },
+    { name: "Mercure", image: "assets/picturePlanet/mercury.png" },
+    { name: "Vénus", image: "assets/picturePlanet/venus.png" },
+    { name: "Terre", image: "assets/picturePlanet/earth.png" },
+    { name: "Mars", image: "assets/picturePlanet/mars.png" },
+    { name: "Jupiter", image: "assets/picturePlanet/jupiter.png" },
+    { name: "Saturne", image: "assets/picturePlanet/saturne.png" },
+    { name: "Uranus", image: "assets/picturePlanet/uranus.png" },
+    { name: "Neptune", image: "assets/picturePlanet/neptune.png" },
   
   ];
 

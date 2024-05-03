@@ -3,19 +3,23 @@
     display: flex;
     justify-content: space-around;
     overflow-x: auto;
-    background-color: black;
-    padding: 15px;
+    // background-image:linear-gradient(to bottom, black 88%, #030305 100%);
+    padding: 20px;
   }
   
   .planet {
     position: relative;
-    display: inline-block;
+    display: flex;       
+    justify-content: center; 
+    align-items: center;
     cursor: pointer;
   }
   
   .planet img {
-    width: 150px;
-    height: 150px;
+    width: auto;
+    height: auto;
+    max-width: 250px;
+    max-height: 150px;
     transition: transform 0.3s ease-in-out;
     filter: brightness(60%);
   }
