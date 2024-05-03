@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CelestialBody } from '../models/planet.model';
 
@@ -32,6 +32,19 @@ export class SolarSystemService {
     return this.http.get<CelestialBody>(`${this.baseUrl}/bodies/${id}`);
   }
 
+  sortPlanets(planets: CelestialBody[], sortKey: keyof CelestialBody, ascending: boolean = true): Observable<CelestialBody[]> {
+    return of(planets.sort((a, b) => {
+      let aValue = a[sortKey]; 
+      let bValue = b[sortKey];
+      if (aValue < bValue) {
+        return ascending ? -1 : 1;
+      }
+      if (aValue > bValue) {
+        return ascending ? 1 : -1;
+      }
+      return 0;
+    }));
+  }
 
 
 }

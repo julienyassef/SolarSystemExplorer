@@ -1,4 +1,5 @@
 export class CelestialBody {
+  [key: string]: any;
   id!: string;
   name!: string;
   englishName!: string;

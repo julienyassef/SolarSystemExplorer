@@ -2,6 +2,14 @@
   <app-loader *ngIf="loading"></app-loader>
   <app-night-star-animation class="animation-night-star"></app-night-star-animation>
   <h2 class="planet-list__title">Listes des planètes</h2>
+  <div class="planet-list__sorting-options">
+    <button (click)="changeSort('id')">Nom</button>
+    <button (click)="changeSort('gravity')">Gravité</button>
+    <button (click)="changeSort('avgTemp')">Température</button>
+    <button (click)="changeSort('mass')">Masse</button>
+    <button (click)="changeSort('moons')">Nombre de Lunes</button>
+    <button (click)="changeSort('semimajorAxis')">Orbitale</button>
+  </div>
   <ul class="planet-list">
     <ng-container *ngFor="let planet of planets$ | async">
       <li class="planet-list__item" >
