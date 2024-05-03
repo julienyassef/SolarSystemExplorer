@@ -15,6 +15,7 @@ export class CelestialBody {
       volExponent: number;
   };
   gravity?: number;
+  dimension?: string;
   radius?: {
       meanRadius: number;
       equaRadius: number;
@@ -34,11 +35,12 @@ export class CelestialBody {
       this.englishName = data.englishName;
       this.isPlanet = data.isPlanet;
       this.semimajorAxis = data.semimajorAxis;
-      this.moons = data.moons;
+      this.moons = data.moons || [];
       this.imageUrl = data.imageUrl;
       this.mass = data.mass;
       this.vol = data.vol;
       this.gravity = data.gravity;
+      this.dimension = data.dimension;
       this.radius = data.radius;
       this.eccentricity = data.eccentricity; 
       this.inclination = data.inclination; 

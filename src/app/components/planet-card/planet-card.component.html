@@ -1,8 +1,11 @@
 <div class="card">
   <h3 class="card__title">{{ planet.name }}</h3>
-  <img class="card__image" [src]="getImage(planet.name)" alt="{{ planet.name }}">
-  <p class="card__detail card__detail--gravity">Gravité: {{ planet.gravity }} m/s²</p>
-  <p class="card__detail card__detail--temp">Température moyenne: {{ planet.avgTemp }} K</p>
-  <p class="card__detail card__detail--discovery">Découvert par: {{ planet.discoveredBy }}, en {{ planet.discoveryDate }}</p>
+  <div  class="card__containerImg" >
+    <img class="card__containerImg__image" [src]="getImage(planet.name)" alt="{{ planet.name }}">
+  </div>
+  <p class="card__detail">Gravité: {{ planet.gravity }} m/s²</p>
+  <p class="card__detail" *ngIf="planet.avgTemp !== undefined">Température moyenne: {{ convertKelvinToCelsius(planet.avgTemp) | number:'1.0-0' }} °C</p>
+  <p class="card__detail">Masse: {{ planet.mass?.massValue }}e{{ planet.mass?.massExponent }} kg</p>
+  <p class="card__detail">Nombre de lunes: {{ planet.moons?.length }}</p>
 </div>
 

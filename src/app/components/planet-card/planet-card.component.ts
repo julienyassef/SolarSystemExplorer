@@ -27,6 +27,11 @@ export class PlanetCardComponent {
   getImage(planetName: string): string {
     const found = this.localPlanetImages.find(p => p.name === planetName);
     return found ? found.image : 'assets/picturePlanet/blackStar.jpg'; 
+    
+  }
+
+  convertKelvinToCelsius(kelvin: number): number {
+    return kelvin - 273.15;
   }
 
 }
