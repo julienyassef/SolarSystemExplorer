@@ -47,5 +47,32 @@
       font-weight: 600;
     }
 
+    &__button {
+      padding: 10px 20px; 
+      font-size: 1rem; 
+      font-weight: bold; 
+      color: #fff; 
+      background-color: #DA1274; 
+      border: none; 
+      border-radius: 5px; 
+      margin: 20px;
+      cursor: pointer; 
+      transition: background-color 0.3s; 
+  
+      &:hover {
+        animation: bounce 1.2s infinite;
+      }
+  
+    }
+
   }
   
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); // Le rebond monte de 10px
+    }
+  }
