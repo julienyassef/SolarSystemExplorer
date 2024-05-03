@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Input } from '@angular/core';
 import { CelestialBody } from '../../models/planet.model';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
@@ -11,6 +12,14 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
 })
 export class PlanetCardComponent {
   @Input() planet!: CelestialBody;
+
+  constructor(private router: Router) {}
+
+  navigateToPlanet() {
+    if (this.planet && this.planet.id) {
+      this.router.navigate(['/planets', this.planet.id]);
+    }
+  }
 
   private localPlanetImages = [
     { name: "Mercure", image: "assets/picturePlanet/mercury.png" },
@@ -33,5 +42,7 @@ export class PlanetCardComponent {
   convertKelvinToCelsius(kelvin: number): number {
     return kelvin - 273.15;
   }
+
+  
 
 }

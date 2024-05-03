@@ -27,5 +27,11 @@ export class SolarSystemService {
     );
   }
 
+  // Méthode pour obtenir les planètes par ID
+  getPlanetById(id: string): Observable<CelestialBody> {
+    return this.http.get<CelestialBody>(`${this.baseUrl}/bodies/${id}`);
+  }
+
+
 
 }

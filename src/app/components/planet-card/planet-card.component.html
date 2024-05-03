@@ -7,6 +7,6 @@
   <p class="card__detail" *ngIf="planet.avgTemp !== undefined">Température moyenne: {{ convertKelvinToCelsius(planet.avgTemp) | number:'1.0-0' }} °C</p>
   <p class="card__detail">Masse: {{ planet.mass?.massValue }}e{{ planet.mass?.massExponent }} kg</p>
   <p class="card__detail">Nombre de lunes: {{ planet.moons?.length }}</p>
-  <button class="card__button">En savoir plus</button>
+  <button class="card__button" (click)="navigateToPlanet()">En savoir plus</button>
 </div>
 
