@@ -1,17 +1,19 @@
-import { CommonModule, NgFor} from '@angular/common';
+import { CommonModule, NgFor, NgIf} from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CelestialBody } from '../../models/planet.model';
+import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
   selector: 'app-display-planets-picture',
   standalone: true,
-  imports: [NgFor, CommonModule],
+  imports: [NgFor, CommonModule, LoaderComponent, NgIf],
   templateUrl: './display-planets-picture.component.html',
   styleUrl: './display-planets-picture.component.scss'
 })
 
 export class PlanetsComponent implements OnInit {
+  loading: boolean = false
 
   constructor(private router: Router) {}
 
@@ -19,8 +21,13 @@ export class PlanetsComponent implements OnInit {
 
   }
 
-  navigateToPlanet(planetId: string) {;
-    this.router.navigate(['/planets', planetId]);
+  navigateToPlanet(planetId: string): void {
+    this.loading = true;
+    setTimeout(() => {
+      this.router.navigate(['/planets', planetId]).finally(() => {
+        this.loading = false;
+      });
+    }, 500); // Délai artificiel de 1 seconde pour tester
   }
   
 
