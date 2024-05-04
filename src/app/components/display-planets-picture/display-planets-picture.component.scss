@@ -3,10 +3,10 @@
     display: flex;
     justify-content: space-around;
     overflow-x: auto;
-    // background-image:linear-gradient(to bottom, black 88%, #030305 100%);
     padding: 20px;
+    gap: 25px;
   }
-  
+
   .planet {
     position: relative;
     display: flex;       
@@ -48,3 +48,12 @@
     opacity: 1;
   }
   
+    /* Stylisation générale de la barre de défilement */
+  .planets-container::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .planets-container::-webkit-scrollbar-thumb {
+    background-color: #DA1274; 
+    border-radius: 6px; 
+  }
