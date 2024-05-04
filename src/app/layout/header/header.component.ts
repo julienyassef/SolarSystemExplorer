@@ -18,12 +18,15 @@ export class HeaderComponent {
 
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd && 'url' in event) {  
-        this.showNightAnimation = !event.url.includes('/planets') ;
-        this.headerClass = event.url.includes('/planets') ? 'page-planets-background' : ''
+      if (event instanceof NavigationEnd) {
+        const isPlanetRoute = event.url.startsWith('/planets');
+  
+        this.showNightAnimation = !isPlanetRoute;
+        this.headerClass = isPlanetRoute ? 'page-planets-background' : '';
       }
     });
   }
+  
 
   ngOnInit(): void {
   }
