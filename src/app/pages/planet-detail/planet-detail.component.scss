@@ -1,7 +1,14 @@
 .planet-detail {
-    margin-top: 150px;
-    display: flex;
-    flex-direction: row;
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+
+    &__wrapper {
+
+        display: flex;
+        flex-direction: row;
+
+    }
 
     &__content{
         width: 50vw;
