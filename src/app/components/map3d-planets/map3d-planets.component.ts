@@ -21,10 +21,15 @@ export class Map3dPlanetsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.renderer = new THREE.WebGLRenderer({ antialias: true });
+      this.renderer = new THREE.WebGLRenderer({
+        antialias: true, // Active l'anti-aliasing, bien pour la qualité visuelle
+        alpha: true,     // Permet la transparence du fond
+        powerPreference: "high-performance" // Indique une préférence pour les performances élevées
+      });
+      this.renderer.setPixelRatio(window.devicePixelRatio);
       this.scene = new THREE.Scene();
       this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      
+
       this.renderer.setSize(window.innerWidth, window.innerHeight);
       this.el.nativeElement.appendChild(this.renderer.domElement);
 
@@ -37,6 +42,8 @@ export class Map3dPlanetsComponent implements OnInit, OnDestroy {
     if (this.renderer && this.scene && this.camera) {
       const textureLoader = new THREE.TextureLoader();
       const planetTexture = textureLoader.load(this.textureUrl);
+    
+
 
       const geometry = new THREE.SphereGeometry(1, 32, 32);
       const material = new THREE.MeshBasicMaterial({ map: planetTexture });

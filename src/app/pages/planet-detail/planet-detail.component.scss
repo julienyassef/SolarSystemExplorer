@@ -1,19 +1,26 @@
 .planet-detail {
     margin-top: 150px;
-    &__title {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
+    display: flex;
+    flex-direction: row;
 
-    &__info {
-        font-size: 1.2rem;
-        margin-bottom: 5px;
-    }
+    &__content{
+        width: 50vw;
 
-    &__image {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-        margin-bottom: 10px;
+        &__title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+    
+        &__info {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+    
+        &__image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+        }
     }
 }

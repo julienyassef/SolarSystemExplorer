@@ -3,12 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { CelestialBody } from '../../models/planet.model';
 import { SolarSystemService } from '../../services/solar-system.service';
 import { NgIf } from '@angular/common';
+import { Map3dPlanetsComponent } from '../../components/map3d-planets/map3d-planets.component';
 
 
 @Component({
   selector: 'app-planet-detail',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, Map3dPlanetsComponent],
   templateUrl: './planet-detail.component.html',
   styleUrl: './planet-detail.component.scss'
 })
