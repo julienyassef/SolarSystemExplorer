@@ -28,12 +28,12 @@ export class PlanetsListComponent implements OnInit  {
   }
 
   loadSortedPlanets(): void {
+    this.loading = true; // Activer le loader avant de commencer le chargement
     this.planets$ = this.solarSystemService.getPlanets().pipe(
       switchMap(planets => this.solarSystemService.sortPlanets(planets, this.sortKey, this.ascending)),
-      finalize(() => this.loading = false)
+      finalize(() => this.loading = false) // Désactiver le loader une fois le chargement terminé
     );
   }
-
   changeSort(newSortKey: keyof CelestialBody): void {
     if (this.sortKey === newSortKey) {
       this.ascending = !this.ascending;  
