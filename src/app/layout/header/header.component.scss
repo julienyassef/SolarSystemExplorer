@@ -55,3 +55,60 @@
     }
   }
   
+
+
+ //Tablette version
+
+ @media (min-width: 601px) and (max-width: 1023px) {
+
+  .solar-system-header {
+ 
+    padding: 0rem;
+    padding-top: 1.5rem;
+  
+    .header-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .navigation {
+      margin-top: 1rem;
+  
+      .nav-link {
+        font-size: 1.2rem;
+        margin: 0 1rem;
+        padding: 0rem;
+  
+      }
+    }
+  }
+ 
+}
+  
+
+ //Mobile version 
+@media (max-width: 600px) {
+
+
+  .solar-system-header {
+  
+    padding: 0rem;
+    padding-top: 1.5rem;
+
+    .header-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .navigation {
+      margin-top: 1rem;
+
+      .nav-link {
+        font-size: 0.9rem;
+        margin: 0 0.5rem;
+        padding: 0rem;
+
+      }
+    }
+  }
+}
