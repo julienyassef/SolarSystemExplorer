@@ -1,18 +1,32 @@
 <div class="planet-list-page">
   <app-loader *ngIf="loading"></app-loader>
   <app-night-star-animation class="animation-night-star"></app-night-star-animation>
-  <h2 class="planet-list__title">Listes des planètes</h2>
-  <div class="planet-list__sorting-options">
-    <button (click)="changeSort('id')">Nom</button>
-    <button (click)="changeSort('gravity')">Gravité</button>
-    <button (click)="changeSort('avgTemp')">Température</button>
-    <button (click)="changeSort('mass')">Masse</button>
-    <button (click)="changeSort('moons')">Nombre de Lunes</button>
-    <button (click)="changeSort('semimajorAxis')">Orbitale</button>
-  </div>
+  <h2 class="planet-list-page__title">Listes des planètes</h2>
+  <div class="planet-list-page__sorting-options">
+    <button class="planet-list-page__button" (click)="changeSort('name')">
+      Nom <img *ngIf="sortKey === 'name'" src="../../../assets/icon/Vector.svg" [ngClass]="{'icon-rotate': !ascending}" class="icon-base">
+    </button>
+    <button class="planet-list-page__button" (click)="changeSort('gravity')">
+      Gravité <img *ngIf="sortKey === 'gravity'" src="../../../assets/icon/Vector.svg" [ngClass]="{'icon-rotate': !ascending}" class="icon-base">
+    </button>
+    <button class="planet-list-page__button" (click)="changeSort('avgTemp')">
+      Température <img *ngIf="sortKey === 'avgTemp'" src="../../../assets/icon/Vector.svg" [ngClass]="{'icon-rotate': !ascending}" class="icon-base">
+    </button>
+    <button class="planet-list-page__button" (click)="changeSort('mass')">
+      Masse <img *ngIf="sortKey === 'mass'" src="../../../assets/icon/Vector.svg" [ngClass]="{'icon-rotate': !ascending}" class="icon-base">
+    </button>
+    <button class="planet-list-page__button" (click)="changeSort('moons')">
+      Nombre de Lunes <img *ngIf="sortKey === 'moons'" src="../../../assets/icon/Vector.svg" [ngClass]="{'icon-rotate': !ascending}" class="icon-base">
+    </button>
+    <button class="planet-list-page__button" (click)="changeSort('semimajorAxis')">
+      Orbitale <img *ngIf="sortKey === 'semimajorAxis'" src="../../../assets/icon/Vector.svg" [ngClass]="{'icon-rotate': !ascending}" class="icon-base">
+    </button>
+</div>
+
+
   <ul class="planet-list">
     <ng-container *ngFor="let planet of planets$ | async">
-      <li class="planet-list__item" >
+      <li class="planet-list__item">
         <app-planet-card [planet]="planet" class="planet-card"></app-planet-card>
       </li>
     </ng-container>
