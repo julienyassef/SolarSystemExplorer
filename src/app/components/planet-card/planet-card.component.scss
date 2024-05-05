@@ -76,3 +76,24 @@
       transform: translateY(-10px); // Le rebond monte de 10px
     }
   }
+
+
+ 
+
+ 
+  //Mobile version 
+ @media (max-width: 767px) {
+
+
+  .card {
+
+    width: 100%; 
+
+    box-sizing: border-box;
+  
+
+
+  }
+
+ 
+ }

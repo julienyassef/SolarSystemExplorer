@@ -87,3 +87,36 @@
   width: 100%;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+
+ 
+ //Tablette version
+
+ @media (min-width: 601px) and (max-width: 1023px) {
+
+
+
+}
+  
+
+ //Mobile version 
+@media (max-width: 767px) {
+
+  .planet-list-page {
+
+    &__sorting-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr; 
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+  
+ 
+  }
+  
+  
+  
+
+
+
+}

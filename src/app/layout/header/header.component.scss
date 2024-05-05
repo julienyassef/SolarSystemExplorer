@@ -2,7 +2,7 @@
   position: fixed; 
   top: 0; 
   left: 0; 
-  width: 100%; 
+  width: 100vw; 
   height: 150px; 
   z-index: -10;
 }
@@ -59,10 +59,9 @@
 
  //Tablette version
 
- @media (min-width: 601px) and (max-width: 1023px) {
+ @media (max-width: 1023px) {
 
   .solar-system-header {
- 
     padding: 0rem;
     padding-top: 1.5rem;
   
@@ -87,10 +86,11 @@
   
 
  //Mobile version 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
 
 
   .solar-system-header {
+    width: 100vw;
   
     padding: 0rem;
     padding-top: 1.5rem;
