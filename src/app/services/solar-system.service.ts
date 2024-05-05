@@ -47,4 +47,11 @@ export class SolarSystemService {
   }
 
 
+  getPlanetNames(): string[] {
+
+    return ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"];
+  }
+
+
+
 }
