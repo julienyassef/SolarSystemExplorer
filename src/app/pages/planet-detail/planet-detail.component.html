@@ -3,24 +3,30 @@
 <app-display-planets-picture class="planet-detail"></app-display-planets-picture>
 <div class="planet-detail__wrapper">
     <div *ngIf="planet" class="planet-detail__wrapper__content">
-        <h2 class="planet-detail__wrapper__title">{{ planet.name }}</h2>
-        <p class="planet-detail__wrapper__info">ID: {{ planet.id }}</p>
-        <p class="planet-detail__wrapper__info">Anglais: {{ planet.englishName }}</p>
-        <p class="planet-detail__wrapper__info">Semi-grand axe: {{ planet.semimajorAxis }} km</p>
-        <p class="card__detail" *ngIf="planet.moons">Nombre de lunes: {{ planet.moons.length }}</p>
-        <img *ngIf="planet.imageUrl" [src]="planet.imageUrl" alt="{{ planet.name }}" class="planet-detail__wrapper__image">
-        <p *ngIf="planet.mass" class="planet-detail__wrapper__info">Masse: {{ planet.mass.massValue }}e{{ planet.mass.massExponent }} kg</p>
-        <p *ngIf="planet.vol" class="planet-detail__wrapper__info">Volume: {{ planet.vol.volValue }}e{{ planet.vol.volExponent }} km³</p>
-        <p *ngIf="planet.gravity" class="planet-detail__wrapper__info">Gravité: {{ planet.gravity }} m/s²</p>
-        <p *ngIf="planet.dimension" class="planet-detail__wrapper__info">Dimension: {{ planet.dimension }}</p>
-        <p *ngIf="planet.radius" class="planet-detail__wrapper__info">Rayon moyen: {{ planet.radius.meanRadius }} km</p>
-        <p *ngIf="planet.eccentricity" class="planet-detail__wrapper__info">Excentricité: {{ planet.eccentricity }}</p>
-        <p *ngIf="planet.inclination" class="planet-detail__wrapper__info">Inclinaison: {{ planet.inclination }}°</p>
-        <p *ngIf="planet.discoveredBy" class="planet-detail__wrapper__info">Découvert par: {{ planet.discoveredBy }}</p>
-        <p *ngIf="planet.discoveryDate" class="planet-detail__wrapper__info">Date de découverte: {{ planet.discoveryDate }}</p>
-        <p *ngIf="planet.alternativeName" class="planet-detail__wrapper__info">Nom alternatif: {{ planet.alternativeName }}</p>
-        <p *ngIf="planet.axialTilt" class="planet-detail__wrapper__info">Inclinaison axiale: {{ planet.axialTilt }}°</p>
-        <p *ngIf="planet.avgTemp" class="planet-detail__wrapper__info">Température moyenne: {{ convertKelvinToCelsius(planet.avgTemp).toFixed(0) }} °C</p>
+        <h2 class="planet-detail__wrapper__content__title">{{ planet.name }}</h2>
+        <div class="planet-detail__wrapper__content__container">
+            <div class="planet-detail__wrapper__content__container__desc">
+                <p class="planet-detail__wrapper__info">ID: {{ planet.id }}</p>
+                <p class="planet-detail__wrapper__info">Anglais: {{ planet.englishName }}</p>
+                <p class="planet-detail__wrapper__info">Semi-grand axe: {{ planet.semimajorAxis }} km</p>
+                <p class="planet-detail__wrapper__info" *ngIf="planet.moons">Nombre de lunes: {{ planet.moons.length }}</p>
+                <p *ngIf="planet.mass" class="planet-detail__wrapper__info">Masse: {{ planet.mass.massValue }}e{{ planet.mass.massExponent }} kg</p>
+                <p *ngIf="planet.vol" class="planet-detail__wrapper__info">Volume: {{ planet.vol.volValue }}e{{ planet.vol.volExponent }} km³</p>
+                <p *ngIf="planet.gravity" class="planet-detail__wrapper__info">Gravité: {{ planet.gravity }} m/s²</p>
+                <p *ngIf="planet.dimension" class="planet-detail__wrapper__info">Dimension: {{ planet.dimension }}</p>
+                <p *ngIf="planet.radius" class="planet-detail__wrapper__info">Rayon moyen: {{ planet.radius.meanRadius }} km</p>
+                <p *ngIf="planet.eccentricity" class="planet-detail__wrapper__info">Excentricité: {{ planet.eccentricity }}</p>
+                <p *ngIf="planet.inclination" class="planet-detail__wrapper__info">Inclinaison: {{ planet.inclination }}°</p>
+                <p *ngIf="planet.discoveredBy" class="planet-detail__wrapper__info">Découvert par: {{ planet.discoveredBy }}</p>
+                <p *ngIf="planet.discoveryDate" class="planet-detail__wrapper__info">Date de découverte: {{ planet.discoveryDate }}</p>
+                <p *ngIf="planet.alternativeName" class="planet-detail__wrapper__info">Nom alternatif: {{ planet.alternativeName }}</p>
+                <p *ngIf="planet.axialTilt" class="planet-detail__wrapper__info">Inclinaison axiale: {{ planet.axialTilt }}°</p>
+                <p *ngIf="planet.avgTemp" class="planet-detail__wrapper__info">Température moyenne: {{ convertKelvinToCelsius(planet.avgTemp).toFixed(0) }} °C</p>
+            </div>
+            <div class="planet-detail__wrapper__content__container__wrapperImg">
+                <img class="planet-detail__wrapper__content__container__wrapperImg__image"  [src]="getImage(planet.name)" alt="{{ planet.name }}">
+            </div>
+        </div>
     </div>
-    <app-map3d-planets *ngIf="planet" [textureUrl]="'../../assets/pictureMap/' + planet.id + '.jpg'"></app-map3d-planets>
+    
 </div>

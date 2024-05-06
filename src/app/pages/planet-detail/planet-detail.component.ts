@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CelestialBody } from '../../models/planet.model';
 import { SolarSystemService } from '../../services/solar-system.service';
 import { NgIf } from '@angular/common';
-import { Map3dPlanetsComponent } from '../../components/map3d-planets/map3d-planets.component';
+
 import { PlanetsComponent } from '../../components/display-planets-picture/display-planets-picture.component';
 import { NightStarAnimationComponent } from '../../components/night-star-animation/night-star-animation.component';
 import { switchMap } from 'rxjs';
@@ -11,10 +11,13 @@ import { Erreur404Component } from '../../erreur404/erreur404.component';
 
 
 
+
+
+
 @Component({
   selector: 'app-planet-detail',
   standalone: true,
-  imports: [NgIf, Map3dPlanetsComponent, PlanetsComponent, NightStarAnimationComponent, Erreur404Component],
+  imports: [NgIf, PlanetsComponent, NightStarAnimationComponent, Erreur404Component],
   templateUrl: './planet-detail.component.html',
   styleUrl: './planet-detail.component.scss'
 })
@@ -59,5 +62,23 @@ export class PlanetDetailComponent implements OnInit {
 
   convertKelvinToCelsius(kelvin: number): number {
     return kelvin - 273.15;
+  }
+
+  private localPlanetImages = [
+    { name: "Mercure", image: "assets/picturePlanet/mercury.png" },
+    { name: "Vénus", image: "assets/picturePlanet/venus.png" },
+    { name: "La Terre", image: "assets/picturePlanet/earth.png" },
+    { name: "Mars", image: "assets/picturePlanet/mars.png" },
+    { name: "Jupiter", image: "assets/picturePlanet/jupiter.png" },
+    { name: "Saturne", image: "assets/picturePlanet/saturne.png" },
+    { name: "Uranus", image: "assets/picturePlanet/uranus.png" },
+    { name: "Neptune", image: "assets/picturePlanet/neptune.png" },
+  
+  ];
+
+  getImage(planetName: string): string {
+    const found = this.localPlanetImages.find(p => p.name === planetName);
+    return found ? found.image : 'assets/picturePlanet/blackStar.jpg'; 
+    
   }
 }
