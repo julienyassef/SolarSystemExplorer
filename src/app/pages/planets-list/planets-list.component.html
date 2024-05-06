@@ -22,8 +22,6 @@
       Orbitale <img *ngIf="sortKey === 'semimajorAxis'" src="../../../assets/icon/Vector.svg" [ngClass]="{'icon-rotate': !ascending}" class="icon-base">
     </button>
 </div>
-
-
   <ul class="planet-list">
     <ng-container *ngFor="let planet of planets$ | async">
       <li class="planet-list__item">
