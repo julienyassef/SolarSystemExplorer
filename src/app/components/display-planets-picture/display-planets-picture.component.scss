@@ -1,59 +1,66 @@
-/* Dans votre fichier component.scss */
-.planets-container {
+.planetsDisplay {
+  display: flex;
+  justify-content: center;
+
+  &__container {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     overflow-x: auto;
     padding: 20px;
     gap: 25px;
+
+    &::-webkit-scrollbar {
+      height: 6px;  
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #DA1274; 
+      border-radius: 6px;        
+    }
+  
+   
   }
 
-  .planet {
+  &__container__planet {
     position: relative;
-    display: flex;       
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     align-items: center;
     cursor: pointer;
-  }
-  
-  .planet img {
-    width: auto;
-    height: auto;
-    max-width: 250px;
-    max-height: 150px;
-    transition: transform 0.3s ease-in-out;
-    filter: brightness(60%);
-  }
-  
-  .planet-info {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
-    color: #DA1274;
-    font-weight: 800;
-    text-align: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .planet:hover img {
-    transform: scale(1.1);
-    filter: brightness(150%);
-  }
-  
-  .planet:hover .planet-info {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-    /* Stylisation générale de la barre de défilement */
-  .planets-container::-webkit-scrollbar {
-    height: 6px;
-  }
 
-  .planets-container::-webkit-scrollbar-thumb {
-    background-color: #DA1274; 
-    border-radius: 6px; 
+    .planetsDisplay__container__planet__img {
+      width: auto;
+      height: auto;
+      max-width: 250px;
+      max-height: 150px;
+      transition: all 0.3s ease-in-out;
+      filter: brightness(60%);
+    }
+
+    .planetsDisplay__container__planet__info {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+      color: #DA1274;
+      font-weight: 800;
+      text-align: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    &:hover {
+      .planetsDisplay__container__planet__img {
+        transform: scale(1.1);
+        filter: brightness(150%);
+      }
+
+      .planetsDisplay__container__planet__info {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
   }
+}

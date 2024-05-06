@@ -1,7 +1,10 @@
 <app-loader *ngIf="loading"></app-loader>
-<div class="planets-container">
-  <div *ngFor="let planet of planets" class="planet" (click)="navigateToPlanet(planet.id)">
-    <img [src]="planet.image" alt="{{ planet.name }}" >
-    <div class="planet-info">{{ planet.name }}</div>
+<div class="planetsDisplay"> 
+  <div class="planetsDisplay__container">
+    <div *ngFor="let planet of planets" class="planetsDisplay__container__planet" (click)="navigateToPlanet(planet.id)">
+      <img class="planetsDisplay__container__planet__img" [src]="planet.image" alt="{{ planet.name }}" >
+      <div class="planetsDisplay__container__planet__info">{{ planet.name }}</div>
+    </div>
   </div>
+
 </div>

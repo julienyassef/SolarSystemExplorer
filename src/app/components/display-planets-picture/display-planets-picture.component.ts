@@ -27,7 +27,7 @@ export class PlanetsComponent implements OnInit {
       this.router.navigate(['/planets', planetId]).finally(() => {
         this.loading = false;
       });
-    }, 500); // Délai artificiel de 1 seconde pour tester
+    }, 800); 
   }
   
 
