@@ -6,8 +6,7 @@
         <h2 class="planet-detail__wrapper__content__title">{{ planet.name }}</h2>
         <div class="planet-detail__wrapper__content__container">
             <div class="planet-detail__wrapper__content__container__desc">
-                <p class="planet-detail__wrapper__info">ID: {{ planet.id }}</p>
-                <p class="planet-detail__wrapper__info">Anglais: {{ planet.englishName }}</p>
+                <p class="planet-detail__wrapper__info">Nom anglais: {{ planet.englishName }}</p>
                 <p class="planet-detail__wrapper__info">Semi-grand axe: {{ planet.semimajorAxis }} km</p>
                 <p class="planet-detail__wrapper__info" *ngIf="planet.moons">Nombre de lunes: {{ planet.moons.length }}</p>
                 <p *ngIf="planet.mass" class="planet-detail__wrapper__info">Masse: {{ planet.mass.massValue }}e{{ planet.mass.massExponent }} kg</p>
