@@ -34,7 +34,15 @@ export class SolarSystemService {
 
   sortPlanets(planets: CelestialBody[], sortKey: keyof CelestialBody, ascending: boolean = true): Observable<CelestialBody[]> {
     return of(planets.sort((a, b) => {
-      let aValue = a[sortKey]; 
+      // Gère spécifiquement le tri pour la masse
+      if (sortKey === 'mass') {
+        let aValue = a.mass ? a.mass.massValue * Math.pow(10, a.mass.massExponent) : 0;
+        let bValue = b.mass ? b.mass.massValue * Math.pow(10, b.mass.massExponent) : 0;
+        return ascending ? (aValue - bValue) : (bValue - aValue);
+      }
+  
+      // Tri général pour tous les autres cas
+      let aValue = a[sortKey];
       let bValue = b[sortKey];
       if (aValue < bValue) {
         return ascending ? -1 : 1;
@@ -45,6 +53,7 @@ export class SolarSystemService {
       return 0;
     }));
   }
+  
 
 
   getPlanetNames(): string[] {
