@@ -69,11 +69,10 @@
 
     .footer {
         width: 100vw;           
-        height: 250px;          
+        height: 180px;          
         display: flex; 
         flex-direction: column;          
         justify-content: center; 
-        gap: 30px;
         padding: 20px;
       
         &__devJY {
