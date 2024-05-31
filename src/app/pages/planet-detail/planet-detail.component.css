@@ -1,0 +1,99 @@
+.animation-night-star {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.planet-detail {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+}
+.planet-detail__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.planet-detail__wrapper__content {
+  box-shadow: 0 0px 8px rgb(0, 0, 0);
+  border-radius: 8px;
+  width: 70%;
+  max-width: 960px;
+  padding: 20px;
+  margin: 20px 0;
+}
+.planet-detail__wrapper__content__title {
+  font-size: 2rem;
+  color: #DA1274;
+  margin-bottom: 15px;
+}
+.planet-detail__wrapper__content__container {
+  display: flex;
+  justify-content: space-between;
+}
+.planet-detail__wrapper__content__container__desc {
+  width: 40%;
+}
+.planet-detail__wrapper__content__container__desc .planet-detail__wrapper__info {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+.planet-detail__wrapper__content__container__wrapperImg {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  border-radius: 10px;
+}
+.planet-detail__wrapper__content__container__wrapperImg__image {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (min-width: 601px) and (max-width: 1023px) {
+  .planet-detail__wrapper__content__title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .planet-detail__wrapper__content__container__desc {
+    width: 40%;
+  }
+  .planet-detail__wrapper__content__container__desc .planet-detail__wrapper__info {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 767px) {
+  .planet-detail__wrapper__content__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    order: 1;
+  }
+  .planet-detail__wrapper__content__container {
+    flex-direction: column;
+  }
+  .planet-detail__wrapper__content__container__desc {
+    width: 100%;
+    order: 3;
+  }
+  .planet-detail__wrapper__content__container__desc .planet-detail__wrapper__info {
+    font-size: 0.9rem;
+  }
+  .planet-detail__wrapper__content__container__wrapperImg {
+    width: 100%;
+    order: 2;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}/*# sourceMappingURL=planet-detail.component.css.map */

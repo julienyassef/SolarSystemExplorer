@@ -1,0 +1,40 @@
+.Error404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #DA1274;
+}
+.Error404__title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: yellow;
+}
+.Error404__desc {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #062e58;
+}
+.Error404__button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #062e58;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+.Error404__button:hover {
+  background-color: light(#062e58, 10%);
+  color: yellow;
+}
+.Error404__line {
+  background-color: #062e58;
+  width: 100vw;
+  height: 5px;
+}/*# sourceMappingURL=erreur404.component.css.map */
