@@ -16,15 +16,16 @@ export class PlanetCardComponent {
   constructor(private router: Router) {}
 
   navigateToPlanet() {
-    if (this.planet && this.planet.id) {
-      console.log(`Navigating to planet with ID: ${this.planet.id}`);
-      this.router.navigate(['/planets', this.planet.id]);
+    const planetDetails = this.getPlanetDetails(this.planet.name);
+    if (planetDetails && planetDetails.id) {
+      console.log(`Navigating to planet with ID: ${planetDetails.id}`);
+      this.router.navigate(['/planets', planetDetails.id]);
     } else {
-      console.error('Invalid planet ID:', this.planet?.id);
+      console.error('Invalid planet ID:', planetDetails?.id);
     }
   }
 
-  private localPlanetImages = [
+  private planetImageDetails = [
     { id: "mercury", name: "Mercure", image: "assets/picturePlanet/mercury.png" },
     { id: "venus", name: "Vénus", image: "assets/picturePlanet/venus.png" },
     { id: "earth", name: "La Terre", image: "assets/picturePlanet/earth.png" },
@@ -35,9 +36,13 @@ export class PlanetCardComponent {
     { id: "neptune", name: "Neptune", image: "assets/picturePlanet/neptune.png" },
   ];
 
-  getImage(planetName: string): string {
-    const found = this.localPlanetImages.find(p => p.name === planetName);
-    return found ? found.image : 'assets/picturePlanet/blackStar.jpg';
+  private getPlanetDetails(planetName: string) {
+    return this.planetImageDetails.find(p => p.name === planetName);
+  }
+
+  getPlanetImage(planetName: string): string {
+    const planetDetails = this.getPlanetDetails(planetName);
+    return planetDetails ? planetDetails.image : 'assets/picturePlanet/blackStar.jpg';
   }
 
   convertKelvinToCelsius(kelvin: number): number {

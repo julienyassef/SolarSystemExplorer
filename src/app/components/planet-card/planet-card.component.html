@@ -1,7 +1,7 @@
 <div class="card">
   <h3 class="card__title">{{ planet.name }}</h3>
   <div class="card__containerImg">
-    <img class="card__containerImg__image" [src]="getImage(planet.name)" alt="{{ planet.name }}">
+    <img class="card__containerImg__image" [src]="getPlanetImage(planet.name)" alt="{{ planet.name }}">
   </div>
   <p class="card__detail">Gravité: {{ planet.gravity }} m/s²</p>
   <p class="card__detail" *ngIf="planet.avgTemp !== undefined">Température moyenne: {{ convertKelvinToCelsius(planet.avgTemp) | number:'1.0-0' }} °C</p>
